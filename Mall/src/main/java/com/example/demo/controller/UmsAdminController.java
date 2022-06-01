@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -76,21 +75,11 @@ public class UmsAdminController {
 			logger.info("Getting user " + id + "'s information...");
 			return new Response(200, id + "'s info", "Succeed");
 		}
-		// 创建 API 中规定的 umsAdminRegisterParam 所具有的类型
-		@Getter
-		@Setter
-		@NoArgsConstructor
-		@AllArgsConstructor
-		public static class RegisterParam {
-				private String email;
-				private String icon;
-				private String nickName;
-				private String note;
-				}
 		@ResponseBody
-		@PostMapping("/register")
-		public Response register() {
-			
+		@PostMapping("/delete/{id}")
+		public Response deleteId() {
+			logger.info("delete id");
+			return new Response(200, null, "Succeed");
 		}
 		
 }
