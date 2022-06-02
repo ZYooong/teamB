@@ -3,8 +3,7 @@ package com.example.demo.model;
 import lombok.Data;
 import java.util.List;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
 
 import com.example.demo.repository.CmsSubjectProductRelation;
 import com.example.demo.repository.PmsSkuStock;
@@ -29,10 +28,6 @@ public class productParam {
 	 private String keywords;
 	 private Integer lowStock;//库存预警值
 	 private List<PmsMemberPrice>memberPriceList;
-	 
-	 private List<PmsProductFullReduction>productFullReductionList;
-	 private List<PmsProductLadder>productLadderList;
-	 
 	 private String name;
 	 private Integer newStatus;//新品状态:0->不是新品；1->新品 ($int32)
 	 private String note ;
