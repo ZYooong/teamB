@@ -2,11 +2,11 @@ package com.example.demo.model;
 
 public class PmsMemberPrice {
 	
-	private Integer id;
-	private Integer memberLevelId;
+	private Long id;
+	private Long memberLevelId;
 	private String memberLevelName;
 	private Double memberPrice;//会员价格
-	private Integer productId;
+	private Long productId;
 
 	
 }
