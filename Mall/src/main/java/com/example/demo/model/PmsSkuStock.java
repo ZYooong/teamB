@@ -1,7 +1,7 @@
 package com.example.demo.model;
 
-public class skuStockList {
-	private Integer id;//($int64)
+public class PmsSkuStock {
+	private Long id;//($int64)
 	private Integer lockStock;//($int32)锁定库存
 	private Integer lowStock;//($int32)预警库存
 	private String pic;//展示图片
@@ -12,4 +12,5 @@ public class skuStockList {
 	private String skuCode;//sku编码
 	private String spData;//商品销售属性，json格式
 	private Integer stock;//($int32)库存
+
 }
