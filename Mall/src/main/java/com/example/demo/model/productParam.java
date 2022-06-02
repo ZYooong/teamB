@@ -54,8 +54,6 @@ public class productParam {
 	private String promotionStartTime;//促销开始时间 
 	private Integer promotionType ;//促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购 
 	private Integer publishStatus ;//上架状态：0->下架；1->上架 
-	@Min(value = 0, message = "不推荐")
-    @Max(value = 1, message = "推荐")
 	private Integer recommandStatus;//推荐状态；0->不推荐；1->推荐 
 	private Integer sale ;//销量 
 	private String serviceIds ;//以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮 
