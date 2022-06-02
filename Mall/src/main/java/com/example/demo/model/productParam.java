@@ -5,9 +5,6 @@ import java.util.List;
 
 
 
-import com.example.demo.repository.CmsSubjectProductRelation;
-import com.example.demo.repository.PmsSkuStock;
-
 @Data
 public class productParam {
 	private String albumPics;//画册图片，连产品图片限制为5张，以逗号分割
