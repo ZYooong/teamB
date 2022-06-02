@@ -3,11 +3,6 @@ package com.example.demo.model;
 import lombok.Data;
 import java.util.List;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-
-import com.example.demo.repository.CmsSubjectProductRelation;
-import com.example.demo.repository.PmsSkuStock;
 
 @Data
 public class productParam {
