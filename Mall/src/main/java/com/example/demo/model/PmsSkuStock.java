@@ -6,7 +6,7 @@ public class PmsSkuStock {
 	private Integer lowStock;//($int32)预警库存
 	private String pic;//展示图片
 	private Double price;
-	private Integer productId;//($int64)
+	private Long productId;//($int64)
 	private Double promotionPrice;//单品促销价格
 	private Integer sale;//销量
 	private String skuCode;//sku编码
