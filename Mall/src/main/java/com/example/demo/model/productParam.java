@@ -3,10 +3,8 @@ package com.example.demo.model;
 import lombok.Data;
 import java.util.List;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
-@Data
+
 public class productParam {
 	private String albumPics;//画册图片，连产品图片限制为5张，以逗号分割
 	 
@@ -26,10 +24,6 @@ public class productParam {
 	 private String keywords;
 	 private Integer lowStock;//库存预警值
 	 private List<PmsMemberPrice>memberPriceList;
-	 
-	 private List<PmsProductFullReduction>productFullReductionList;
-	 private List<PmsProductLadder>productLadderList;
-	 
 	 private String name;
 	 private Integer newStatus;//新品状态:0->不是新品；1->新品 ($int32)
 	 private String note ;
