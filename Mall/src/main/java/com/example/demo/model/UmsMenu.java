@@ -3,11 +3,15 @@ package com.example.demo.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Data
+@Entity
 @SuperBuilder
 @NoArgsConstructor
 public class UmsMenu implements Serializable {
