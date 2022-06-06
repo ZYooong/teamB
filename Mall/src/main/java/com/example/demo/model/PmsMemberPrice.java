@@ -1,5 +1,12 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class PmsMemberPrice {
 	
 	private Long id;
