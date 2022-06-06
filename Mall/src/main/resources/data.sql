@@ -1,15 +1,4 @@
-DROP TABLE IF EXISTS ums_menu;
-CREATE TABLE ums_menu (
-	id			integer		PRIMARY KEY,
-	parent_id	integer		NOT NULL,
-	create_time timestamp	NOT NULL, 
-	title		text		NOT NULL,
-	level		integer		NOT NULL,
-	sort		integer		NOT NULL,
-	name		text		NOT NULL,
-	icon		text		NOT NULL,
-	hidden		integer		NOT NULL
-);
+TRUNCATE TABLE ums_menu;
 INSERT INTO ums_menu (id, parent_id, create_time, title, level, sort, name, icon, hidden) VALUES ('1', '0', '2020-02-02 14:50:36', '商品', '0', '0', 'pms', 'product', '0');
 INSERT INTO ums_menu (id, parent_id, create_time, title, level, sort, name, icon, hidden) VALUES ('2', '1', '2020-02-02 14:51:50', '商品列表', '1', '0', 'product', 'product-list', '0');
 INSERT INTO ums_menu (id, parent_id, create_time, title, level, sort, name, icon, hidden) VALUES ('3', '1', '2020-02-02 14:52:44', '添加商品', '1', '0', 'addProduct', 'product-add', '0');
