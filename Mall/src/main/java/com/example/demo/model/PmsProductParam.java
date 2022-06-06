@@ -6,10 +6,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-import javax.persistence.Entity;
+
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+
 @Data
 public class PmsProductParam {
 	private String albumPics;// 画册图片，连产品图片限制为5张，以逗号分割

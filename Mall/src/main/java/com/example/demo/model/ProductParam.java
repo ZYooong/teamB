@@ -1,10 +1,14 @@
 package com.example.demo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
+import java.util.List;
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class productParam {
+public class ProductParam {
 	private String albumPics;// 画册图片，连产品图片限制为5张，以逗号分割
 	private Long brandId;
 	private String brandName;// 品牌名称

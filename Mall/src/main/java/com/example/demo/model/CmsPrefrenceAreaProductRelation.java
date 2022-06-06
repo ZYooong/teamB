@@ -1,11 +1,12 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
+
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Data
 //优选专区和商品的关系
 
 public class CmsPrefrenceAreaProductRelation {
