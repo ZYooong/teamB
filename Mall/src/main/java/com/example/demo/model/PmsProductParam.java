@@ -1,10 +1,17 @@
 package com.example.demo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+import javax.persistence.Entity;
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 @Data
-public class productParam {
+public class PmsProductParam {
 	private String albumPics;// 画册图片，连产品图片限制为5张，以逗号分割
 	private Long brandId;
 	private String brandName;// 品牌名称
@@ -20,21 +27,16 @@ public class productParam {
 	private Long id;
 	private String keywords;
 	private Integer lowStock;// 库存预警值
-	private List<PmsMemberPrice> memberPriceList;
 	private String name;
 	private Integer newStatus;// 新品状态:0->不是新品；1->新品 ($int32)
 	private String note;
 	private Double originalPrice;// 市场价
 	private String pic;
-	private List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList;
-	private List<PmsProductAttributeValue> productAttributeValueList;
 	private Integer previewStatus;// 是否为预告商品：0->不是；1->是 ($int32)
 	private Double price;
 	private Long productAttributeCategoryId;// ($int64)
 	private Long productCategoryId;// ($int649)
 	private String productCategoryName;// 商品分类名称
-	private List<PmsProductFullReduction> productFullReductionList;
-	private List<PmsProductLadder> productLadderList;
 	private String productSn; // 货号
 	private String promotionEndTime;// 促销结束时间 ($date-time)
 	private Integer promotionPerLimit;// 活动限购数量 ($int32)
@@ -49,7 +51,6 @@ public class productParam {
 	private Integer sort;// 排序
 	private Integer stock;// 库存
 	private String subTitle;// 副标题
-	private List<CmsSubjectProductRelation> subjectProductRelationList;
 	private String unit;// 单位
 	private Integer usePointLimit;// 限制使用的积分数
 	private Integer verifyStatus;// 审核状态：0->未审核；1->审核通过
