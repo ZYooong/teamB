@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.extern.slf4j.Slf4j;
 import com.example.demo.model.request.*;
-import com.example.demo.model.reponse.*;
+import com.example.demo.model.responses.*;
 import com.example.demo.util.*;
 
 @RequestMapping("/admin") // 所有本类中方法的请求路径都以 /admin 开头
