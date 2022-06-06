@@ -15,12 +15,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PmsProductFullReduction {
+public class PmsSubjectProductRelation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	private Double fullPrice;
-	private Long productId;
-	private Double reducePrice;
-	
+	private Long id;//($int64)
+	private Long productId;//($int64)
+	private Long subjectId;//integer($int64)
 }
