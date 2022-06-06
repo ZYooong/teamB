@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.creatModel;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,12 +15,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PmsProductFullReduction {
+public class PmsProductAttributeValue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Double fullPrice;
+	private Long productAttributeId;
 	private Long productId;
-	private Double reducePrice;
-	
-}
+	private String value;
+} // 手动添加规格或参数的值,参数单值，规格有多个时以逗号隔开

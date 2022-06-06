@@ -1,24 +1,28 @@
-package com.example.demo.model;
+package com.example.demo.creatModel;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Data
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
-//优选专区和商品的关系
-public class PmsPrefrenceAreaProductRelation {
+public class PmsProductLadder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Long prefrenceAreaId;
+	private Double discount;//折扣
+	private Integer count;//满足的商品数量
+	private Double price;//折后价格
 	private Long productId;
+
+	
 }

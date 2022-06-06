@@ -1,4 +1,4 @@
-package com.example.demo.model.request;
+package com.example.demo.model.createRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,13 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.example.demo.model.PmsMemberPrice;
-import com.example.demo.model.PmsPrefrenceAreaProductRelation;
-import com.example.demo.model.PmsProductAttributeValue;
-import com.example.demo.model.PmsProductFullReduction;
-import com.example.demo.model.PmsProductLadder;
-import com.example.demo.model.PmsSkuStock;
-import com.example.demo.model.PmsSubjectProductRelation;
+import com.example.demo.creatModel.CmsPrefrenceAreaProductRelation;
+import com.example.demo.creatModel.PmsMemberPrice;
+import com.example.demo.creatModel.PmsProductAttributeValue;
+import com.example.demo.creatModel.PmsProductFullReduction;
+import com.example.demo.creatModel.PmsProductLadder;
+import com.example.demo.creatModel.PmsSkuStock;
+import com.example.demo.creatModel.PmsSubjectProductRelation;
 
 @Data
 //@Entity
@@ -48,7 +48,7 @@ public class ProductParam {
 	 private String note ;
 	 private Double originalPrice;//市场价 
 	 private String pic  ;
-	 private List<PmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList ;
+	 private List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList ;
 	 private List<PmsProductAttributeValue> productAttributeValueList;
 	 private Integer previewStatus ;//是否为预告商品：0->不是；1->是 ($int32)
 	 private Double price  ;

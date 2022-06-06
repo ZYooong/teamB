@@ -1,4 +1,4 @@
-package com.example.demo.productParamService;
+package com.example.demo.createProductParamService;
 
 import java.util.List;
 
@@ -7,32 +7,32 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.PmsMemberPrice;
-import com.example.demo.model.PmsPrefrenceAreaProductRelation;
-import com.example.demo.model.PmsProduct;
-import com.example.demo.model.PmsProductAttributeValue;
-import com.example.demo.model.PmsProductFullReduction;
-import com.example.demo.model.PmsProductLadder;
-import com.example.demo.model.PmsSkuStock;
-import com.example.demo.model.PmsSubjectProductRelation;
-import com.example.demo.model.request.ProductParam;
-import com.example.demo.productParamRepository.PmsMemberPriceRepository;
-import com.example.demo.productParamRepository.PmsPrefrenceAreaProductRelationRepository;
-import com.example.demo.productParamRepository.PmsProductAttributeValueRepository;
-import com.example.demo.productParamRepository.PmsProductFullReductionRepository;
-import com.example.demo.productParamRepository.PmsProductLadderRepository;
-import com.example.demo.productParamRepository.PmsProductRepository;
-import com.example.demo.productParamRepository.PmsSkuStockRepository;
-import com.example.demo.productParamRepository.PmsSubjectProductRelationRepository;
+import com.example.demo.creatModel.CmsPrefrenceAreaProductRelation;
+import com.example.demo.creatModel.PmsMemberPrice;
+import com.example.demo.creatModel.PmsProduct;
+import com.example.demo.creatModel.PmsProductAttributeValue;
+import com.example.demo.creatModel.PmsProductFullReduction;
+import com.example.demo.creatModel.PmsProductLadder;
+import com.example.demo.creatModel.PmsSkuStock;
+import com.example.demo.creatModel.PmsSubjectProductRelation;
+import com.example.demo.createProductParamRepository.CmsPrefrenceAreaProductRelationRepository;
+import com.example.demo.createProductParamRepository.PmsMemberPriceRepository;
+import com.example.demo.createProductParamRepository.PmsProductAttributeValueRepository;
+import com.example.demo.createProductParamRepository.PmsProductFullReductionRepository;
+import com.example.demo.createProductParamRepository.PmsProductLadderRepository;
+import com.example.demo.createProductParamRepository.PmsProductRepository;
+import com.example.demo.createProductParamRepository.PmsSkuStockRepository;
+import com.example.demo.createProductParamRepository.PmsSubjectProductRelationRepository;
+import com.example.demo.model.createRequest.ProductParam;
 
 @Service
-public class PmsProductServiceImpl implements PmsProductService {
+public class PmsProductServiceImp implements PmsProductService {
 	@Autowired
 	PmsProductRepository pmsProductRepository;
 	@Autowired
 	PmsMemberPriceRepository pmsMemberPriceRepository;
 	@Autowired
-	PmsPrefrenceAreaProductRelationRepository pmsPrefrenceAreaProductRelationRepository;
+	CmsPrefrenceAreaProductRelationRepository pmsPrefrenceAreaProductRelationRepository;
 	@Autowired
 	PmsProductAttributeValueRepository pmsProductAttributeValueRepository;
 	@Autowired
@@ -103,10 +103,10 @@ public class PmsProductServiceImpl implements PmsProductService {
 				pmsProductAttributeValueRepository.saveAndFlush(pmsProductAttributeValue);
 			}
 		}
-		List<PmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList = productParam
+		List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList = productParam
 				.getPrefrenceAreaProductRelationList();
 		if (prefrenceAreaProductRelationList != null) {
-			for (PmsPrefrenceAreaProductRelation pmsPrefrenceAreaProductRelation : prefrenceAreaProductRelationList) {
+			for (CmsPrefrenceAreaProductRelation pmsPrefrenceAreaProductRelation : prefrenceAreaProductRelationList) {
 				pmsPrefrenceAreaProductRelationRepository.saveAndFlush(pmsPrefrenceAreaProductRelation);
 			}
 		}

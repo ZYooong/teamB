@@ -1,4 +1,6 @@
-package com.example.demo.model;
+package com.example.demo.creatModel;
+
+import java.util.Iterator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,14 +17,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PmsProductLadder {
+public class PmsMemberPrice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Double discount;//折扣
-	private Integer count;//满足的商品数量
-	private Double price;//折后价格
-	private Long productId;
-
-	
+	private Long memberLevelId;
+	private String memberLevelName;
+	private Double memberPrice;//会员价格
+	private Long productId;	
 }
