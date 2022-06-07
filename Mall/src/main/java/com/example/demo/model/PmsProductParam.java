@@ -6,14 +6,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Entity
 @Data
 public class PmsProductParam {
 	private String albumPics;// 画册图片，连产品图片限制为5张，以逗号分割
@@ -53,7 +53,7 @@ public class PmsProductParam {
 	private Integer recommandStatus;// 推荐状态；0->不推荐；1->推荐
 	private Integer sale;// 销量
 	private String serviceIds;// 以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮
-	private List<PmsSkuStock> skuStockList;
+//	private List<PmsSkuStock> skuStockList;
 	private Integer sort;// 排序
 	private Integer stock;// 库存
 	private String subTitle;// 副标题

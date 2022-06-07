@@ -1,9 +1,18 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
 public class PmsProduct {
 	private String albumPics;//画册图片，连产品图片限制为5张，以逗号分割
 	private Long brandId;//($int64)
