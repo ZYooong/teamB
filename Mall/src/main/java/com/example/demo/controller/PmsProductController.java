@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.model.request.ProductParam;
-import com.example.demo.model.response.CommonResult;
+import com.example.demo.model.responses.CommonResult;
 import com.example.demo.service.PmsProductParamService;
 
 import lombok.AllArgsConstructor;

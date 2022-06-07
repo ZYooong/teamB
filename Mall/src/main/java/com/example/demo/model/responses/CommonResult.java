@@ -19,5 +19,7 @@ public class CommonResult {
 	public static CommonResult success(Object data) {
 		return CommonResult.builder().code(200l).data(data).message("通信成功").build();
 	}
-
+	public static CommonResult fail(Long code,Object data,String message) {
+		  return CommonResult.builder().code(code).data(data).message(message).build();
+	}
 }
