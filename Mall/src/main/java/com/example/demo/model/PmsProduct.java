@@ -1,5 +1,9 @@
 package com.example.demo.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class PmsProduct {
 	private String albumPics;//画册图片，连产品图片限制为5张，以逗号分割
 	private Long brandId;//($int64)
@@ -13,6 +17,8 @@ public class PmsProduct {
 	private Long feightTemplateId;//($int64)
 	private Integer giftGrowth;//($int32)赠送的成长值
 	private Integer giftPoint;//($int32)赠送的积分
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;//($int64)
 	private String keywords;
 	private Integer lowStock;//($int32)库存预警值
