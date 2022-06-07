@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,6 +28,8 @@ public class PmsProductParam {
 	private Long feightTemplateId;
 	private Integer giftGrowth;// 赠送的成长值
 	private Integer giftPoint;// 赠送的积分
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String keywords;
 	private Integer lowStock;// 库存预警值
