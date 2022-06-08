@@ -1,6 +1,8 @@
-package com.example.demo.model;
+package com.example.demo.model.responses;
 
 import java.util.List;
+
+import com.example.demo.model.PmsProduct;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

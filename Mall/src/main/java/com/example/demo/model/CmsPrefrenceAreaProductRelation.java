@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 //优选专区和商品的关系
-
+@Entity
 public class CmsPrefrenceAreaProductRelation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
