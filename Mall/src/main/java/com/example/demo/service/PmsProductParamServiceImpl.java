@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 import com.example.demo.model.request.ProductParam;
-
+import com.example.demo.model.request.SearchProductParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -94,7 +94,9 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 		pmsProduct.setWeight(productParam.getWeight());
 		pmsProductRepository.saveAndFlush(pmsProduct);
 
-		List<PmsMemberPrice> memberPriceList = productParam.getMemberPriceList();
+		/*@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
+	
+		/*List<PmsMemberPrice> memberPriceList = productParam.getMemberPriceList();
 		if (memberPriceList != null) {
 			for (PmsMemberPrice pmsMemberPrice : memberPriceList) {
 				pmsMemberPriceRepository.saveAndFlush(pmsMemberPrice);
@@ -136,7 +138,14 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 			for (CmsSubjectProductRelation pmsSubjectProductRelation : subjectProductRelationList) {
 				pmsSubjectProductRelationRepository.saveAndFlush(pmsSubjectProductRelation);
 			}
-		}
+		}*/
+	}
+	@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
+	@Override
+	public List<PmsProductParam> search(SearchProductParam searchProductParam) {
+		
+		return pmsProductRepository.findAll();
+		
 	}
 
 }
