@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.model.CmsPrefrenceAreaProductRelation;
 import com.example.demo.model.CmsSubjectProductRelation;
 import com.example.demo.model.PmsMemberPrice;
+import com.example.demo.model.PmsProduct;
 import com.example.demo.model.PmsProductAttributeValue;
 import com.example.demo.model.PmsProductFullReduction;
 import com.example.demo.model.PmsProductLadder;
@@ -22,7 +23,7 @@ import com.example.demo.repository.PmsMemberPriceRepository;
 import com.example.demo.repository.PmsProductAttributeValueRepository;
 import com.example.demo.repository.PmsProductFullReductionRepository;
 import com.example.demo.repository.PmsProductLadderRepository;
-import com.example.demo.repository.PmsProductParamRepository;
+import com.example.demo.repository.PmsProductRepository;
 import com.example.demo.repository.PmsSkuStockRepository;
 
 import com.example.demo.model.PmsProductParam;
@@ -30,7 +31,7 @@ import com.example.demo.model.PmsProductParam;
 @Service
 public class PmsProductParamServiceImpl implements PmsProductParamService {
 	@Autowired
-	PmsProductParamRepository pmsProductRepository;
+	PmsProductRepository pmsProductRepository;
 	@Autowired
 	PmsMemberPriceRepository pmsMemberPriceRepository;
 	@Autowired
@@ -49,7 +50,7 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 	@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
 	@Override
 	public void create(ProductParam productParam) {//向数据库存储数据
-		PmsProductParam pmsProduct = new PmsProductParam();
+		PmsProduct pmsProduct = new PmsProduct();
 		pmsProduct.setId(productParam.getId());
 		pmsProduct.setAlbumPics(productParam.getAlbumPics());
 		pmsProduct.setBrandId(productParam.getBrandId());
