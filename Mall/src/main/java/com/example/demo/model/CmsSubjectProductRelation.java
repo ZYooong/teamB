@@ -20,8 +20,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-
-
 public class CmsSubjectProductRelation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

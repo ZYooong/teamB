@@ -8,10 +8,13 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
+@Entity
 public class SearchProductParam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

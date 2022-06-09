@@ -38,7 +38,7 @@ public class PmsProductController {
 
 			return CommonResult.success(productParam);
 		}catch(Exception ex) {
-			return CommonResult.fail(401L,null,	"Unauthorized");
+			return CommonResult.fail(401L,null,"Unauthorized");
 		}
 		
 	}
@@ -46,10 +46,10 @@ public class PmsProductController {
 	@ResponseBody
 	public CommonResult list(SearchProductParam searchProductParam) {
 		try {
-			List<PmsProductParam> aaa  =   pmsProductParamService.search(searchProductParam);
+			List<PmsProductParam> aaa = pmsProductParamService.search(searchProductParam);
 			return CommonResult.success(aaa);
 		}catch(Exception ex) {
-			return CommonResult.fail(401L,null,	"Unauthorized");
+			return CommonResult.fail(401L,null,"Unauthorized");
 		}
 	}
 }

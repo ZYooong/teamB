@@ -20,15 +20,12 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-
 public class PmsProductLadder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private Double discount;//折扣
 	private Integer count;//满足的商品数量
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	private Double price;//折后价格
 	private Long productId;
 

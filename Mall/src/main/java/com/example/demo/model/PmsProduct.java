@@ -10,13 +10,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
 @SuperBuilder
-
 public class PmsProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

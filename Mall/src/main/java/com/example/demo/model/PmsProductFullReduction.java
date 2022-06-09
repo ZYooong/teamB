@@ -20,14 +20,11 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-
 public class PmsProductFullReduction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Double fullPrice;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private Double fullPrice;
 	private Long productId;
 	private Double reducePrice;
 	
