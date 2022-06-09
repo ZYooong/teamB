@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.PmsProductParam;
 import com.example.demo.model.request.ProductParam;
+import com.example.demo.model.request.SearchProductParam;
 import com.example.demo.model.responses.CommonResult;
 import com.example.demo.service.PmsProductParamService;
 
@@ -32,9 +38,18 @@ public class PmsProductController {
 
 			return CommonResult.success(productParam);
 		}catch(Exception ex) {
-			return CommonResult.fail(401L,null,	"Unauthorized");
+			return CommonResult.fail(401L,null,"Unauthorized");
 		}
 		
 	}
-
+	@GetMapping("/list") 
+	@ResponseBody
+	public CommonResult list(SearchProductParam searchProductParam) {
+		try {
+			List<PmsProductParam> aaa = pmsProductParamService.search(searchProductParam);
+			return CommonResult.success(aaa);
+		}catch(Exception ex) {
+			return CommonResult.fail(401L,null,"Unauthorized");
+		}
+	}
 }
