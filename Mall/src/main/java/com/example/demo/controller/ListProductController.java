@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-public class QueryProductController {
+public class ListProductController {
 	@GetMapping("/queryProduct")
 	public String getQueryProduct(//
 			@RequestParam("brandId") Long brandId, //

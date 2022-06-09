@@ -1,5 +1,9 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +19,8 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-//优选专区和商品的关系
 
+//优选专区和商品的关系
 public class CmsPrefrenceAreaProductRelation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
