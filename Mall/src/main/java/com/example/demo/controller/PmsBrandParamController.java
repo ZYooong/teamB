@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.model.PmsBrandParam;
+import com.example.demo.model.PmsBrand;
+import com.example.demo.model.request.PmsBrandParam;
 import com.example.demo.model.responses.CommonResult;
 import com.example.demo.service.PmsBrandParamService;
 
@@ -35,7 +36,7 @@ public class PmsBrandParamController {
 	@ResponseBody
 	public CommonResult list() {
 		try {
-			List<PmsBrandParam> listBrand = pmsBrandParamService.search();
+			List<PmsBrand> listBrand = pmsBrandParamService.search();
 			return CommonResult.success(listBrand);
 		} catch (Exception ex) {
 			return CommonResult.fail(404L,null,"Not Found");
