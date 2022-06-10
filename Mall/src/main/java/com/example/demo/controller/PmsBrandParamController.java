@@ -19,13 +19,13 @@ import com.example.demo.service.PmsBrandService;
 @Controller
 public class PmsBrandParamController {
 	@Autowired
-	private PmsBrandService pmsBrandParamService;
+	private PmsBrandService pmsBrandService;
 
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsBrandParam pmsBrandParam) { // 传入参数为 RequestBody （在文档中标识为 body）
 		try {
-			pmsBrandParamService.create(pmsBrandParam);
+			pmsBrandService.create(pmsBrandParam);
 			return CommonResult.success(pmsBrandParam);
 		} catch (Exception ex) {
 			return CommonResult.fail(401L, null, "Unauthorized");
@@ -36,7 +36,7 @@ public class PmsBrandParamController {
 	@ResponseBody
 	public CommonResult list() {
 		try {
-			List<PmsBrand> listBrand = pmsBrandParamService.search();
+			List<PmsBrand> listBrand = pmsBrandService.search();
 			return CommonResult.success(listBrand);
 		} catch (Exception ex) {
 			return CommonResult.fail(404L,null,"Not Found");
