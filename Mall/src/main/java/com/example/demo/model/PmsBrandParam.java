@@ -3,7 +3,6 @@ package com.example.demo.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +15,6 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @SuperBuilder
 public class PmsBrandParam {
-	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String firstLetter;//品牌首字母
 	private String bigPic;//品牌大图

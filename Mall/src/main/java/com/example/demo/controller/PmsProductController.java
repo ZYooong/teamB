@@ -22,7 +22,7 @@ import com.example.demo.service.PmsProductParamService;
 public class PmsProductController {
 	// Logger 用于记录服务器日志
 	@Autowired
-	PmsProductParamService pmsProductParamService;
+	private PmsProductParamService pmsProductParamService;
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
@@ -42,7 +42,7 @@ public class PmsProductController {
 			List<PmsProduct> listProduct = pmsProductParamService.search(searchProductParam);
 			return CommonResult.success(listProduct);
 		} catch (Exception ex) {
-			return CommonResult.fail(401L,null,"Unauthorized");
+			return CommonResult.fail(404L,null,"Not Found");
 		}
 	}
 

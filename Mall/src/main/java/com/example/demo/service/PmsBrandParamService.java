@@ -7,16 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.PmsBrandParam;
 import com.example.demo.repository.PmsBrandParamRepository;
+
 @Service
-public class PmsBrandParamService{
+public class PmsBrandParamService {
 	@Autowired
 	PmsBrandParamRepository pmsBrandParamRepository;
-	
-	public void create(PmsBrandParam pmsBrandParam){
+
+	public void create(PmsBrandParam pmsBrandParam) {
 	}
-		
-	public List<PmsBrandParam> search(){
-			
-			return pmsBrandParamRepository.findAll();	
-	}	
+
+	public List<PmsBrandParam> search() {
+
+		return pmsBrandParamRepository.findAll();
+	}
 }
