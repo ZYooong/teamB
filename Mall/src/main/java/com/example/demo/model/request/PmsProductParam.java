@@ -1,21 +1,18 @@
-package com.example.demo.model;
+package com.example.demo.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @SuperBuilder
 public class PmsProductParam {
 	@Id

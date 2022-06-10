@@ -2,8 +2,7 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-import com.example.demo.model.request.ProductParam;
+import com.example.demo.model.request.PmsProductParam;
 import com.example.demo.model.request.SearchProductParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,6 @@ import com.example.demo.repository.PmsProductLadderRepository;
 import com.example.demo.repository.PmsProductParamRepository;
 import com.example.demo.repository.PmsSkuStockRepository;
 
-import com.example.demo.model.PmsProductParam;
-
 @Service
 public class PmsProductParamServiceImpl implements PmsProductParamService {
 	@Autowired
@@ -46,9 +43,8 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 	@Autowired
 	CmsSubjectProductRelationRepository pmsSubjectProductRelationRepository;
 	
-	@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
 	@Override
-	public void create(ProductParam productParam) {//向数据库存储数据
+	public void create(PmsProductParam productParam) {//向数据库存储数据
 		PmsProductParam pmsProduct = new PmsProductParam();
 		pmsProduct.setId(productParam.getId());
 		pmsProduct.setAlbumPics(productParam.getAlbumPics());
@@ -94,7 +90,6 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 		pmsProduct.setWeight(productParam.getWeight());
 		pmsProductRepository.saveAndFlush(pmsProduct);
 
-		/*@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
 	
 		/*List<PmsMemberPrice> memberPriceList = productParam.getMemberPriceList();
 		if (memberPriceList != null) {
@@ -140,7 +135,6 @@ public class PmsProductParamServiceImpl implements PmsProductParamService {
 			}
 		}*/
 	}
-	@Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
 	@Override
 	public List<PmsProductParam> search(SearchProductParam searchProductParam) {
 		

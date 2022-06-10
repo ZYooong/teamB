@@ -10,36 +10,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.model.request.PmsProductParam;
-import com.example.demo.model.request.SearchProductParam;
+import com.example.demo.model.PmsBrandParam;
 import com.example.demo.model.responses.CommonResult;
-import com.example.demo.service.PmsProductParamService;
+import com.example.demo.service.PmsBrandParamService;
 
-
-@RequestMapping("/product") 
+@RequestMapping("/brand") 
 @Controller
-public class PmsProductController {
-	// Logger 用于记录服务器日志
+public class PmsBrandParamController {
 	@Autowired
-	PmsProductParamService pmsProductParamService;
+	PmsBrandParamService pmsBrandParamService;
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create") 
-	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
+	public CommonResult create(@RequestBody PmsBrandParam pmsBrandParam) { // 传入参数为 RequestBody （在文档中标识为 body）
 		try {
-			pmsProductParamService.create(productParam);
+			pmsBrandParamService.create(pmsBrandParam);
 
-			return CommonResult.success(productParam);
+			return CommonResult.success(pmsBrandParam);
 		}catch(Exception ex) {
 			return CommonResult.fail(401L,null,"Unauthorized");
 		}
-		
 	}
 	@GetMapping("/list") 
 	@ResponseBody
-	public CommonResult list(SearchProductParam searchProductParam) {
+	public CommonResult list() {
 		try {
-			List<PmsProductParam> aaa = pmsProductParamService.search(searchProductParam);
-			return CommonResult.success(aaa);
+			List<PmsBrandParam> bbb = pmsBrandParamService.search();
+			return CommonResult.success(bbb);
 		}catch(Exception ex) {
 			return CommonResult.fail(401L,null,"Unauthorized");
 		}
