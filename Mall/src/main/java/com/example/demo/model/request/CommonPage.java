@@ -17,14 +17,11 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
 @SuperBuilder
 public class CommonPage {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer pageNum;//($int32)
 	private Integer pageSize;//($int32)
 	private Long total;//($int64)
 	private Integer totalPage;//($int32)
-	//private List<PmsProduct> pmsProductList;
+	private List<PmsProduct> pmsProductList;
 }
