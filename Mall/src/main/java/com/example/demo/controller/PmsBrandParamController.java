@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.model.PmsBrand;
 import com.example.demo.model.request.PmsBrandParam;
 import com.example.demo.model.responses.CommonResult;
-import com.example.demo.service.PmsBrandParamService;
+import com.example.demo.service.PmsBrandService;
 
 @RequestMapping("/brand")
 @Controller
 public class PmsBrandParamController {
 	@Autowired
-	private PmsBrandParamService pmsBrandParamService;
+	private PmsBrandService pmsBrandParamService;
 
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create")

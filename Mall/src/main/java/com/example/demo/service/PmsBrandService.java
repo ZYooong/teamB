@@ -10,9 +10,9 @@ import com.example.demo.model.request.PmsBrandParam;
 import com.example.demo.repository.PmsBrandRepository;
 
 @Service
-public class PmsBrandParamService {
+public class PmsBrandService {
 	@Autowired
-	PmsBrandRepository pmsBrandRepository;
+	private PmsBrandRepository pmsBrandRepository;
 
 	public void create(PmsBrandParam pmsBrandParam) {
 	}
