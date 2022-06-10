@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.model.PmsProduct;
 import com.example.demo.model.request.PmsProductParam;
 import com.example.demo.model.request.SearchProductParam;
 import com.example.demo.model.responses.CommonResult;
@@ -23,25 +24,26 @@ public class PmsProductController {
 	@Autowired
 	PmsProductParamService pmsProductParamService;
 	@ResponseBody // 返回值为 ResponseBody 的内容
-	@PostMapping("/create") 
+	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
 		try {
 			pmsProductParamService.create(productParam);
-
 			return CommonResult.success(productParam);
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			return CommonResult.fail(401L,null,"Unauthorized");
 		}
-		
+
 	}
-	@GetMapping("/list") 
+
+	@GetMapping("/list")
 	@ResponseBody
 	public CommonResult list(SearchProductParam searchProductParam) {
 		try {
-			List<PmsProductParam> aaa = pmsProductParamService.search(searchProductParam);
-			return CommonResult.success(aaa);
-		}catch(Exception ex) {
+			List<PmsProduct> listProduct = pmsProductParamService.search(searchProductParam);
+			return CommonResult.success(listProduct);
+		} catch (Exception ex) {
 			return CommonResult.fail(401L,null,"Unauthorized");
 		}
 	}
+
 }

@@ -34,8 +34,8 @@ public class PmsBrandParamController {
 	@ResponseBody
 	public CommonResult list() {
 		try {
-			List<PmsBrandParam> bbb = pmsBrandParamService.search();
-			return CommonResult.success(bbb);
+			List<PmsBrandParam> listBrand = pmsBrandParamService.search();
+			return CommonResult.success(listBrand);
 		}catch(Exception ex) {
 			return CommonResult.fail(401L,null,"Unauthorized");
 		}

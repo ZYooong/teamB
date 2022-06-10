@@ -11,6 +11,7 @@ import com.example.demo.repository.PmsBrandParamRepository;
 public class PmsBrandParamService{
 	@Autowired
 	PmsBrandParamRepository pmsBrandParamRepository;
+	
 	public void create(PmsBrandParam pmsBrandParam){
 	}
 		
