@@ -8,21 +8,12 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-<<<<<<< HEAD
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-=======
-import lombok.experimental.SuperBuilder;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Entity
-@SuperBuilder
->>>>>>> refs/heads/main
 public class PmsProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

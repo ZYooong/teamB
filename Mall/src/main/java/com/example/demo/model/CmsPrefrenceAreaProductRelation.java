@@ -13,11 +13,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @Data
 @Entity
-<<<<<<< HEAD
-=======
 @SuperBuilder
-
->>>>>>> refs/heads/main
 //优选专区和商品的关系
 public class CmsPrefrenceAreaProductRelation {
 	@Id
