@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.model.PmsProduct;
 import com.example.demo.model.request.PmsProductParam;
 import com.example.demo.model.request.SearchProductParam;
+import com.example.demo.model.responses.CommonPage;
 import com.example.demo.model.responses.CommonResult;
 import com.example.demo.service.PmsProductParamService;
 
@@ -32,20 +33,28 @@ public class PmsProductController {
 			return CommonResult.success(productParam);
 		} catch (Exception ex) {
 
-			return CommonResult.fail(401L, null, "Unauthorized");
+			return CommonResult.fail(404L, null, "Not Find");
 
 		}
 
 	}
 
-	@GetMapping("/list")
 	@ResponseBody
-	public CommonResult list(SearchProductParam searchProductParam) {
+	@GetMapping("/list")
+	public CommonResult list(@RequestBody SearchProductParam searchProductParam) {
 		try {
 			List<PmsProduct> listProduct = pmsProductParamService.search(searchProductParam);
-			return CommonResult.success(listProduct);
+			@SuppressWarnings("deprecation")
+			CommonPage commonPage =CommonPage.builder()//
+					.pageNum(searchProductParam.getPageNum())//
+					. pageSize(searchProductParam.getPageSize())//
+					. total( new Integer(listProduct.size()).longValue())//
+					 .totalPage(listProduct.size())//
+					 .pmsProductList(listProduct)//
+					.build();//
+			return CommonResult.success(commonPage);
 		} catch (Exception ex) {
-			return CommonResult.fail(401L, null, "Unauthorized");
+			return CommonResult.fail(404L, null, "Not Find");
 
 		}
 	}

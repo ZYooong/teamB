@@ -5,11 +5,11 @@ import com.example.demo.model.PmsProduct;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
+@SuperBuilder
 public class CommonPage {
 	private Integer pageNum;//($int32)
 	private Integer pageSize;//($int32)
