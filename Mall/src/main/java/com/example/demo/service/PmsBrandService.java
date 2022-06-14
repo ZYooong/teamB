@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,10 @@ public class PmsBrandService {
 	private PmsBrandRepository pmsBrandRepository;
 
 	public void create(PmsBrandParam pmsBrandParam) {
+			PmsBrand pmsBrand = new PmsBrand();//
+
+			BeanUtils.copyProperties(pmsBrandParam, pmsBrandParam);
+			pmsBrandRepository.save(pmsBrand);
 	}
 
 	public List<PmsBrand> search() {
