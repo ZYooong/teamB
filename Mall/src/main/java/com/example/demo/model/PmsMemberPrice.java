@@ -8,11 +8,17 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
+<<<<<<< HEAD
+=======
+@SuperBuilder
+
+>>>>>>> refs/heads/main
 public class PmsMemberPrice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

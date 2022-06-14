@@ -8,17 +8,22 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
+<<<<<<< HEAD
+=======
+@SuperBuilder
+>>>>>>> refs/heads/main
 public class PmsProductLadder {
-	private Double discount;//折扣
-	private Integer count;//满足的商品数量
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private Double discount;//折扣
+	private Integer count;//满足的商品数量
 	private Double price;//折后价格
 	private Long productId;
 
