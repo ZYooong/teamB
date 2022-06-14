@@ -3,14 +3,10 @@ package com.example.demo.model.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-
 import java.util.List;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import com.example.demo.model.CmsPrefrenceAreaProductRelation;
 import com.example.demo.model.CmsSubjectProductRelation;
 import com.example.demo.model.PmsMemberPrice;
@@ -18,10 +14,10 @@ import com.example.demo.model.PmsProductAttributeValue;
 import com.example.demo.model.PmsProductFullReduction;
 import com.example.demo.model.PmsProductLadder;
 import com.example.demo.model.PmsSkuStock;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@SuperBuilder
 public class PmsProductParam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

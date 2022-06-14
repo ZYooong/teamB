@@ -8,13 +8,12 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-@SuperBuilder
+
 public class PmsProductLadder {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

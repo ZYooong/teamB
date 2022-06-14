@@ -16,13 +16,14 @@ import com.example.demo.model.request.SearchProductParam;
 import com.example.demo.model.responses.CommonResult;
 import com.example.demo.service.PmsProductParamService;
 
-
 @RequestMapping("/product") 
+
 @Controller
 public class PmsProductController {
 	// Logger 用于记录服务器日志
 	@Autowired
 	private PmsProductParamService pmsProductParamService;
+
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
@@ -30,7 +31,9 @@ public class PmsProductController {
 			pmsProductParamService.create(productParam);
 			return CommonResult.success(productParam);
 		} catch (Exception ex) {
-			return CommonResult.fail(401L,null,"Unauthorized");
+
+			return CommonResult.fail(401L, null, "Unauthorized");
+
 		}
 
 	}
@@ -42,7 +45,8 @@ public class PmsProductController {
 			List<PmsProduct> listProduct = pmsProductParamService.search(searchProductParam);
 			return CommonResult.success(listProduct);
 		} catch (Exception ex) {
-			return CommonResult.fail(404L,null,"Not Found");
+			return CommonResult.fail(401L, null, "Unauthorized");
+
 		}
 	}
 

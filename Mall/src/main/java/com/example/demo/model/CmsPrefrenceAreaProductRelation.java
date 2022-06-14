@@ -14,7 +14,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-
 //优选专区和商品的关系
 public class CmsPrefrenceAreaProductRelation {
 	@Id
