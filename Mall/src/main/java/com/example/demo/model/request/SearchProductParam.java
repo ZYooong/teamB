@@ -1,23 +1,15 @@
 package com.example.demo.model.request;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
-@Entity
+
 public class SearchProductParam {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private Long brandId;// ($int64)商品品牌编号
 	private String keyword;//商品名称模糊关键字
 	private Integer pageNum;//pageNum Default value : 1
