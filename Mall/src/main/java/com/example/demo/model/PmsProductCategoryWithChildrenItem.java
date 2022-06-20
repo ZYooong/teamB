@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-public class PmsProductCategory {
+public class PmsProductCategoryWithChildrenItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long parentId;//父分类的编号
@@ -24,6 +26,6 @@ public class PmsProductCategory {
 	private Integer navStatus;//是否在导航栏显示($int32)
 	private String productUnit;//分类单位
 	private Integer showStatus;//($int32)是否进行显示
-	private Integer sort;//($int32)排序
-	
+	private Integer sort;//($int32)排序	
+	List< PmsProductCategory> children;
 }

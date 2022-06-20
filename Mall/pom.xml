@@ -45,6 +45,13 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/org.terasoluna.gfw/terasoluna-gfw-common-dependencies -->
+<dependency>
+    <groupId>org.terasoluna.gfw</groupId>
+    <artifactId>terasoluna-gfw-common-dependencies</artifactId>
+    <version>5.5.1.RELEASE</version>
+    <type>pom</type>
+</dependency>
 	</dependencies>
 
 	<build>
