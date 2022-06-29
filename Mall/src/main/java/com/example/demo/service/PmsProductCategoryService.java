@@ -17,10 +17,15 @@ public class PmsProductCategoryService {
 	private PmsProductCategoryRepository  pmsProductCategoryRepository ;
 	@Autowired
 	private PmsProductCategoryWithChildrenItemRepository pmsProductCategoryWithChildrenItemRepository; 
-	public void create(PmsProductCategoryParam pmsProductCategoryParam ) {
+	public boolean create(PmsProductCategoryParam pmsProductCategoryParam ) {
 		PmsProductCategory pmsProductCategory = new PmsProductCategory();
-		BeanUtils.copyProperties(pmsProductCategoryParam, pmsProductCategoryParam);
+		pmsProductCategory=pmsProductCategoryRepository.findByName(pmsProductCategoryParam.getName());
+		if(pmsProductCategory==null){
+			return false;
+		}
+		BeanUtils.copyProperties(pmsProductCategoryParam, pmsProductCategory);
 		pmsProductCategoryRepository .save(pmsProductCategory );
+		return true;
 	}
 	public List<PmsProductCategoryWithChildrenItem> search( ){
 		return pmsProductCategoryWithChildrenItemRepository.findAll();

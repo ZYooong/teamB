@@ -11,4 +11,5 @@ import com.example.demo.model.PmsProductCategory;
 public  interface PmsProductCategoryRepository extends JpaRepository<PmsProductCategory, Long>{
 	@Query(value = "SELECT * FROM pms_product_category WHERE parent_id = :parent_id", nativeQuery = true)
 	List<PmsProductCategory> findByParentId(@Param(value = "parent_id") Long parentId);
+	PmsProductCategory findByName(String name);
 }

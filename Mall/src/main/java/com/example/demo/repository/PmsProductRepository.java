@@ -9,4 +9,6 @@ import com.example.demo.model.PmsProduct;
 public interface PmsProductRepository extends JpaRepository<PmsProduct, Long> {
 	List<PmsProduct> findAll();
 	List<PmsProduct> findByKeyWordsContaining( String keyWords);
+//	List<PmsProduct> findByName(String name);
+	 PmsProduct findByName(String name);
 }

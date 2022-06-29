@@ -16,5 +16,6 @@ public interface PmsBrandRepository extends JpaRepository<PmsBrand, Long> {
 
 		// 方法2：
 		Page<PmsBrand> findByNameLike(Pageable pageable, String keyWord);
+		
 
 }

@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Controller;
@@ -35,16 +34,20 @@ public class PmsProductController {
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
 		try {
-			pmsProductParamService.create(productParam);
-			return CommonResult.success(productParam);
-		} catch (Exception ex) {
-
-			return CommonResult.fail(404L, null, "Not Find");
-
+			if( pmsProductParamService.createPmsProduct(productParam)) {
+				return CommonResult.success(productParam);
+				
+			}else {
+				return CommonResult.fail(201L, null, "Created");
+				
+			}
 		}
-
+		catch (Exception e) {
+			return CommonResult.fail(404L, null, "Not Found");
+		}
+			
 	}
-
+	
 	@ResponseBody
 	@GetMapping("/list")
 	public CommonResult list(@RequestParam(name = "brandId", required = false) Long brandId, //

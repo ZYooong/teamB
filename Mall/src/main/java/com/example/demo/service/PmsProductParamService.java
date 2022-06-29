@@ -44,9 +44,12 @@ public class PmsProductParamService {
 	private CmsSubjectProductRelationRepository pmsSubjectProductRelationRepository;
 
 	// @Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
-	public void create(PmsProductParam productParam) {// 向数据库存储数据
+	public  boolean createPmsProduct(PmsProductParam productParam) {// 向数据库存储数据
 		PmsProduct pmsProduct = new PmsProduct();//
-
+		pmsProduct = pmsProductRepository.findByName(productParam.getName());
+		if(pmsProduct==null){
+			return false;
+		}
 		BeanUtils.copyProperties(productParam, pmsProduct);
 		pmsProductRepository.save(pmsProduct);
 
@@ -93,8 +96,8 @@ public class PmsProductParamService {
 				pmsSubjectProductRelationRepository.saveAndFlush(pmsSubjectProductRelation);
 			}
 		}
+		return true;
 	}
-
 //	public List<PmsProduct> search() {
 //
 //		return pmsProductRepository.findAll();
