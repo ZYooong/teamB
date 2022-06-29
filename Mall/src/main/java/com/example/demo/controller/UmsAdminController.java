@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,12 +59,11 @@ public class UmsAdminController {
 
 		return CommonResult.success(data);
 	}
-
-	@GetMapping("/{id}")
-	@ResponseBody
-	public CommonResult info(@PathVariable Long id) { // 直接通过路径传入参数 （在文档中标识为 path）
-		log.info("Getting user " + id + "'s information...");
-		return new CommonResult(200, id + "'s info", "Succeed");
-	}
+//	@GetMapping("/{id}")
+//	@ResponseBody
+//	public CommonResult info(@PathVariable Long id) { // 直接通过路径传入参数 （在文档中标识为 path）
+//		log.info("Getting user " + id + "'s information...");
+//		return new CommonResult(200, id + "'s info", "Succeed");
+//	}
 
 }

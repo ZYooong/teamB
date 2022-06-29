@@ -8,12 +8,13 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-
+@SuperBuilder
 public class PmsProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +31,7 @@ public class PmsProduct {
 	private Long feightTemplateId;//($int64)
 	private Integer giftGrowth;//($int32)赠送的成长值
 	private Integer giftPoint;//($int32)赠送的积分
-	private String keywords;
+	private String keyWords;
 	private Integer lowStock;//($int32)库存预警值
 	private String name;
 	private Integer newStatus;//($int32)新品状态:0->不是新品；1->新品

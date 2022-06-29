@@ -1,11 +1,11 @@
 package com.example.demo.service;
 
 import java.util.List;
-import com.example.demo.model.request.PmsProductParam;
-import com.example.demo.model.request.SearchProductParam;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.example.demo.model.CmsPrefrenceAreaProductRelation;
 import com.example.demo.model.CmsSubjectProductRelation;
 import com.example.demo.model.PmsMemberPrice;
@@ -14,6 +14,7 @@ import com.example.demo.model.PmsProductAttributeValue;
 import com.example.demo.model.PmsProductFullReduction;
 import com.example.demo.model.PmsProductLadder;
 import com.example.demo.model.PmsSkuStock;
+import com.example.demo.model.request.PmsProductParam;
 import com.example.demo.repository.CmsPrefrenceAreaProductRelationRepository;
 import com.example.demo.repository.CmsSubjectProductRelationRepository;
 import com.example.demo.repository.PmsMemberPriceRepository;
@@ -94,10 +95,11 @@ public class PmsProductParamService {
 		}
 	}
 
-	public List<PmsProduct> search(SearchProductParam searchProductParam) {
-
-		return pmsProductRepository.findAll();
-
-	}
+//	public List<PmsProduct> search() {
+//
+//		return pmsProductRepository.findAll();
+//
+//	}
+	
 
 }

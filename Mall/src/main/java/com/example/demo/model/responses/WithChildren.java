@@ -1,9 +1,11 @@
 package com.example.demo.model.responses;
 
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 @Data
-public class List {
+@SuperBuilder
+public class WithChildren {
 	private Long parentId;//父分类的编号
 	private String description;//	描述
 	private String icon	;//图标
