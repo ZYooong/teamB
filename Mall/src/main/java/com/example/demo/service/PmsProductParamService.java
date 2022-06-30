@@ -42,8 +42,6 @@ public class PmsProductParamService {
 	private PmsSkuStockRepository pmsSkuStockRepository;
 	@Autowired
 	private CmsSubjectProductRelationRepository pmsSubjectProductRelationRepository;
-
-	// @Transactional(rollbackOn = Exception.class)//保证所有数据一次性执行成功，如果执行中出错的话进行回滚
 	public  boolean createPmsProduct(PmsProductParam productParam) {// 向数据库存储数据
 		PmsProduct pmsProduct = new PmsProduct();//
 		pmsProduct = pmsProductRepository.findByName(productParam.getName());
@@ -98,11 +96,4 @@ public class PmsProductParamService {
 		}
 		return true;
 	}
-//	public List<PmsProduct> search() {
-//
-//		return pmsProductRepository.findAll();
-//
-//	}
-	
-
 }

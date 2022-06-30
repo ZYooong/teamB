@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -37,19 +39,12 @@ public class PmsProductCategoryController {
 	@ResponseBody // 返回值为 ResponseBody 的内容
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductCategoryParam pmsProductCategoryParam) { // 传入参数为 RequestBody
-																								// （在文档中标识为 body）
-		try {
-			if(pmsProductCategoryService.create(pmsProductCategoryParam)) {
+																								// （在文档中标识为 body
+			if (pmsProductCategoryService.create(pmsProductCategoryParam)) {
 				return CommonResult.success(pmsProductCategoryParam);
-			}else {
+			} else {
 				return CommonResult.fail(201L, null, "Created");
 			}
-			
-		} catch (Exception ex) {
-
-			return CommonResult.fail(404L, null, "Not Find");
-
-		}
 
 	}
 
@@ -58,6 +53,41 @@ public class PmsProductCategoryController {
 	public CommonResult getProductCategoryWithChildren() {
 
 		return new CommonResult(200, pmsProductCategoryWithChildrenItemRepository.findAll(), "ok");
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public CommonResult createProductCategory(@RequestBody PmsProductCategoryParam param) {
+
+		log.info("商品分类信息: {}", param);
+
+		PmsProductCategory category = new PmsProductCategory();
+		PmsProductCategoryWithChildrenItem categoryWithChildren = new PmsProductCategoryWithChildrenItem();
+		BeanUtils.copyProperties(param, category);
+		BeanUtils.copyProperties(param, categoryWithChildren);
+		Long parentId = param.getParentId();
+
+		if (pmsProductCategoryRepository.findByName(category.getName())==null) {
+			if (parentId != 0) {
+				PmsProductCategoryWithChildrenItem parent = pmsProductCategoryWithChildrenItemRepository
+						.findById(param.getParentId()).get();
+				category.setParent(parent);
+				category.setLevel(1);
+				pmsProductCategoryRepository.save(category);
+			} else {
+				categoryWithChildren.setLevel(0);
+				pmsProductCategoryWithChildrenItemRepository.save(categoryWithChildren);
+			}
+
+			log.info("ProductCategory " + param.getName() + "添加成功");
+
+			return new CommonResult(200, null, "OK");
+		} else {
+			log.info("ProductCategory " + param.getName() + "添加失败");
+
+			return new CommonResult(201, null, "Created");
+		}
+
 	}
 
 	@ResponseBody

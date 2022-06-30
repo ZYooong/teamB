@@ -59,11 +59,4 @@ public class UmsAdminController {
 
 		return CommonResult.success(data);
 	}
-//	@GetMapping("/{id}")
-//	@ResponseBody
-//	public CommonResult info(@PathVariable Long id) { // 直接通过路径传入参数 （在文档中标识为 path）
-//		log.info("Getting user " + id + "'s information...");
-//		return new CommonResult(200, id + "'s info", "Succeed");
-//	}
-
 }

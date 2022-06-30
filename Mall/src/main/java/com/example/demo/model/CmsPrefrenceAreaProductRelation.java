@@ -17,8 +17,6 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @SuperBuilder
-//优选专区和商品的关系
-//@Table(name = "CmsPrefrenceAreaProductRelation", schema = "public")
 public class CmsPrefrenceAreaProductRelation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
