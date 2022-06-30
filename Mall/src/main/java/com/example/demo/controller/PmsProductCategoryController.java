@@ -40,11 +40,11 @@ public class PmsProductCategoryController {
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductCategoryParam pmsProductCategoryParam) { // 传入参数为 RequestBody
 																								// （在文档中标识为 body
-			if (pmsProductCategoryService.create(pmsProductCategoryParam)) {
-				return CommonResult.success(pmsProductCategoryParam);
-			} else {
-				return CommonResult.fail(201L, null, "Created");
-			}
+		if (pmsProductCategoryService.create(pmsProductCategoryParam)) {
+			return CommonResult.success(pmsProductCategoryParam);
+		} else {
+			return CommonResult.fail(201L, null, "Created");
+		}
 
 	}
 
@@ -67,7 +67,7 @@ public class PmsProductCategoryController {
 		BeanUtils.copyProperties(param, categoryWithChildren);
 		Long parentId = param.getParentId();
 
-		if (pmsProductCategoryRepository.findByName(category.getName())==null) {
+		if (pmsProductCategoryRepository.findByName(category.getName()) == null) {
 			if (parentId != 0) {
 				PmsProductCategoryWithChildrenItem parent = pmsProductCategoryWithChildrenItemRepository
 						.findById(param.getParentId()).get();

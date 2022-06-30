@@ -34,20 +34,19 @@ public class PmsProductController {
 	@PostMapping("/create")
 	public CommonResult create(@RequestBody PmsProductParam productParam) { // 传入参数为 RequestBody （在文档中标识为 body）
 		try {
-			if( pmsProductParamService.createPmsProduct(productParam)) {
+			if (pmsProductParamService.createPmsProduct(productParam)) {
 				return CommonResult.success(productParam);
-				
-			}else {
+
+			} else {
 				return CommonResult.fail(201L, null, "Created");
-				
+
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			return CommonResult.fail(404L, null, "Not Found");
 		}
-			
+
 	}
-	
+
 	@ResponseBody
 	@GetMapping("/list")
 	public CommonResult list(@RequestParam(name = "brandId", required = false) Long brandId, //
@@ -57,8 +56,7 @@ public class PmsProductController {
 			@RequestParam(name = "verifyStatus", required = false) Integer verifyStatus, //
 			@RequestParam(name = "productSn", required = false) String productSn, //
 			@RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum, //
-			@RequestParam(name = "pageSize", required = false, defaultValue = "5") Integer pageSize) 
-	{
+			@RequestParam(name = "pageSize", required = false, defaultValue = "5") Integer pageSize) {
 
 		PmsProduct pmsProduct = PmsProduct.builder()//
 				.brandId(brandId)//
@@ -98,5 +96,3 @@ public class PmsProductController {
 		return new CommonResult(200, commonPage, "ok");
 	}
 }
-
-

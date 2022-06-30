@@ -20,8 +20,9 @@ public class PmsBrandService {
 
 	public void create(PmsBrandParam pmsBrandParam) {
 	}
+
 	public CommonPage<PmsBrand> search(Integer pageNum, Integer pageSize, String keyword) {
-		
+
 		CommonPage<PmsBrand> commonPage;
 		Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
 		List<PmsBrand> brandsList;

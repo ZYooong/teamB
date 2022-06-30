@@ -42,10 +42,11 @@ public class PmsProductParamService {
 	private PmsSkuStockRepository pmsSkuStockRepository;
 	@Autowired
 	private CmsSubjectProductRelationRepository pmsSubjectProductRelationRepository;
-	public  boolean createPmsProduct(PmsProductParam productParam) {// 向数据库存储数据
-		PmsProduct pmsProduct = new PmsProduct();//
+
+	public boolean createPmsProduct(PmsProductParam productParam) {
+		PmsProduct pmsProduct = new PmsProduct();
 		pmsProduct = pmsProductRepository.findByName(productParam.getName());
-		if(pmsProduct==null){
+		if (pmsProduct == null) {
 			return false;
 		}
 		BeanUtils.copyProperties(productParam, pmsProduct);
