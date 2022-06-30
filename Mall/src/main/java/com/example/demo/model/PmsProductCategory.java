@@ -21,7 +21,6 @@ public class PmsProductCategory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-//	private Long parentId;// 父分类的编号
 	private String description;// 描述
 	private String icon;// 图标
 	private String keywords;// 关键字

@@ -11,11 +11,10 @@ import com.example.demo.model.PmsBrand;
 
 public interface PmsBrandRepository extends JpaRepository<PmsBrand, Long> {
 	// 方法1：
-		@Query(value = "SELECT * FROM pms_brand ORDER BY pms_brand.id LIMIT ?2 OFFSET ?1 ;", nativeQuery = true)
-		List<PmsBrand> findRequiredBrands(Integer startFrom, Integer pageSize);
+	@Query(value = "SELECT * FROM pms_brand ORDER BY pms_brand.id LIMIT ?2 OFFSET ?1 ;", nativeQuery = true)
+	List<PmsBrand> findRequiredBrands(Integer startFrom, Integer pageSize);
 
-		// 方法2：
-		Page<PmsBrand> findByNameLike(Pageable pageable, String keyWord);
-		
+	// 方法2：
+	Page<PmsBrand> findByNameLike(Pageable pageable, String keyWord);
 
 }

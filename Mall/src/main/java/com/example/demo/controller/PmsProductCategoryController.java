@@ -125,6 +125,7 @@ public class PmsProductCategoryController {
 		Integer totalPage = (Integer) (result > 0 ? total / pageSize + 1 : total / pageSize);
 		Integer maxCount = pageSize * pageNum;
 		Integer minCount = pageSize * (pageNum - 1);
+
 		if (maxCount > pmsProductCategory.size()) {
 			maxCount = pmsProductCategory.size();
 		}
